@@ -1,0 +1,48 @@
+.header{
+    display: flex;
+    justify-content: space-between;
+    gap: 25px;
+    padding: 15px;
+    background: #7777f7;
+}
+.headerSubsection{
+    display: flex;
+    gap: 5px;
+    align-items: center;
+}
+.appLogo{
+    fill: rgb(253, 217, 13);
+    width: 45px;
+    height: 35px;
+}
+.appName{
+    font-size: 18px;
+    font-weight: 700;
+    color: #ffffff;
+}
+.searchCity{
+    flex: 1;
+    border-radius: 5px;
+    border: none;
+    outline: none;
+}
+.addButton{
+    padding: 0 16px;
+    color: #1c1cf2;
+    font-size: 17px;
+    font-weight: 500;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+}
+@media screen and (max-width: 789px) {
+    .header{
+        gap: 15px;
+    }
+    .headerSubsection{
+        gap: 2px;
+    }
+    .appName{
+        font-size: 12px;    
+    }
+}
