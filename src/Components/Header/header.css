@@ -15,13 +15,13 @@
     height: 35px;
 }
 .appName{
-    font-size: 18px;
+    font-size: 25px;
     font-weight: 700;
     color: #ffffff;
 }
 .searchBox{
     display: flex;
-    width: 85%;
+    width: 81%;
     gap: 25px;
     position: relative;
 }

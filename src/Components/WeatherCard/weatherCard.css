@@ -1,0 +1,70 @@
+.weatherCard{
+    max-width: 500px;
+    background-color: #beb8b8;
+    padding: 15px 25px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between ;
+    border-radius: 5px;
+    position: relative;
+}
+.weather-subsection{
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+.weather-summary{
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+.weather-icon{
+    width: 35px;
+    height: 35px;
+    fill: #ffffff;
+}
+.city-temparature{
+    font-size: 32px;
+    font-weight: 500;
+}
+.location-place{
+    font-size: 21px;
+    font-weight: 600;
+    color: #ede6e6;
+}
+.location{
+    font-size: 15px;
+    font-weight: 500;
+}
+.weather-details{
+    font-size: 21px;
+    font-weight: 500;
+    color: rgb(236 236 242);
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+.delete-btn{
+    position: absolute;
+    top: 6px;
+    right: 12px;
+    width: 25px;
+    height: 25px;
+    fill: #f70d0d;
+    cursor: pointer;
+}
+@media screen and (max-width:675px) {
+    .weatherCard{
+        padding: 27px 8px 5px 8px
+    }
+    .weather-details{
+        font-size: 18px;
+    }
+    .location-place{
+        font-size: 18px;
+    }
+    .location{
+        font-size: 14px;
+        font-weight: 500;
+    }
+}

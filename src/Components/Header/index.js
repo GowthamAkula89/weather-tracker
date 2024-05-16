@@ -5,7 +5,7 @@ import Menu from "../Menu";
 import DataContext from "../DataContext";
 
 const Header = () => {
-  const {setSelectedCity} = useContext(DataContext);
+  const {selectedCity, setSelectedCity, setCities} = useContext(DataContext);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [filteredCities,setFilteredCities]=useState([]);
   const [debounceTimer,setDebounceTimer]=useState(null);
@@ -85,9 +85,11 @@ const Header = () => {
     setSelectedCity((prevState)=> ({...prevState,weatherDetials:weatherData}));
     const forecastData = await fetchData(searchCity,"forecast");
     setSelectedCity((prevState) => ({...prevState, forecastDetails:forecastData}));
+    setCities(selectedCity)
     setSearchCity([]);
     setSearchValue("");
   }
+
   console.log(searchValue)
   return(
       <div className="header">
