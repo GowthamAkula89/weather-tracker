@@ -19,8 +19,8 @@ const Menu = ({filteredCities,handleSearchCity}) => {
         <div className="menuBar">
             {filteredCities &&
                 <>
-                    {filteredCities.map((city, index)=> 
-                    <div key={index} >
+                    {filteredCities.map((city)=> 
+                    <div key={city.id} >
                         <MenuItem 
                             city={city}
                             onClick={() => handleSearchCity(city)}
