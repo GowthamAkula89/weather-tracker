@@ -1,0 +1,35 @@
+.menuBar{
+    width: 100%;
+    max-height: 250px;
+    background-color: #f6f6f7;
+    border: 2px solid #7777f7;
+    border-radius: 0 0 5px 5px;
+    position: absolute;
+    top: 38px;
+    overflow-y: auto;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+.menuItem {
+    display: flex;
+    color: #ffffff;
+    margin: 1px 5px;
+    background-color: #7777f7;
+    border-radius: 5px;
+    padding: 5px 25px;
+    justify-content: space-between;
+    box-shadow: 1px 2px 2px #a7a0a0;
+    cursor: pointer;
+}
+.cityName{
+    font-size: 18px;
+    font-weight: 600;
+}
+.locationDetails{
+    display: flex;
+    gap: 25px;
+    font-size: 18px;
+    font-weight: 500;
+}

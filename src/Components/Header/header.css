@@ -1,7 +1,6 @@
 .header{
     display: flex;
-    justify-content: space-between;
-    gap: 25px;
+    gap: 15px;
     padding: 15px;
     background: #7777f7;
 }
@@ -20,6 +19,12 @@
     font-weight: 700;
     color: #ffffff;
 }
+.searchBox{
+    display: flex;
+    width: 85%;
+    gap: 25px;
+    position: relative;
+}
 .searchCity{
     flex: 1;
     border-radius: 5px;
@@ -36,7 +41,7 @@
     cursor: pointer;
 }
 @media screen and (max-width: 789px) {
-    .header{
+    .searchBox{
         gap: 15px;
     }
     .headerSubsection{
