@@ -82,7 +82,7 @@ const Header = () => {
   const handleAdd = async() => {
     setSelectedCity((prevState)=>({...prevState,cityDetails:searchCity}));
     const weatherData = await fetchData(searchCity,"weather");
-    setSelectedCity((prevState)=> ({...prevState,weatherDetials:weatherData}));
+    setSelectedCity((prevState)=> ({...prevState,weatherDetails:weatherData}));
     const forecastData = await fetchData(searchCity,"forecast");
     setSelectedCity((prevState) => ({...prevState, forecastDetails:forecastData}));
     setCities(selectedCity)

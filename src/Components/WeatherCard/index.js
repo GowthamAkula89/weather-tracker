@@ -18,7 +18,7 @@ const WeatherCard = ({city}) => {
         }
     };
     const cityData = city.cityDetails;
-    const weatherData=city.weatherDetials;
+    const weatherData=city.weatherDetails;
     return(
         <div className="weatherCard">
             <div className="weather-subsection">

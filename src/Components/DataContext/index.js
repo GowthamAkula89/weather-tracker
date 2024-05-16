@@ -5,7 +5,7 @@ const DataContext = createContext();
 export const DataProvider = ({ children }) => {
   const[selectedCity, setSelectedCity] = useState({
     cityDetails:[],
-    weatherDetials:[],
+    weatherDetails:[],
     forecastDetails:[]
   });
   const[cities, setCities] = useState([]);
