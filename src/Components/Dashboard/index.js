@@ -18,7 +18,7 @@ const Dashboard = () => {
         <div className="dashboard">
             {cities.length !== 0 ? (
                 cities.map((city, index) => 
-                    <WeatherCard city={city} key={index} />
+                    <WeatherCard city={city} index={index} key={index} />
                 )
             ) : (
                 <div>No cities available. Add a city to view the weather.</div>
