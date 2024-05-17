@@ -28,7 +28,7 @@ const Forecast = ({ city, handleOpenForecast }) => {
   return (
     <div className="forecast">
       <div className="forecast-row">
-        <div className="forecast-date">Forecast/Date</div>
+        <div className="forecast-date" id="forecast_date">Date/ Forecast</div>
         <div>Sun Rise</div>
         <div>Sun Set</div>
         <div>Max Temp</div>
@@ -37,7 +37,7 @@ const Forecast = ({ city, handleOpenForecast }) => {
       </div>
       {forecastData.time.map((date, index) => (
         <div key={index} className="forecast-row">
-          <div className="forecast-date">{formatDate(date)}</div>
+          <div className="forecast-date" >{formatDate(date)}</div>
           <div className="forecast-cell">{formatTime(forecastData.sunrise[index])}</div>
           <div className="forecast-cell">{formatTime(forecastData.sunset[index])}</div>
           <div className="forecast-cell">

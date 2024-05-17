@@ -20,8 +20,29 @@
     font-size: 18px;
     font-weight: 500;
     margin-bottom: 25px;
-    
 }
 .forecast-cell{
     border-bottom: 1px solid #ffffff;
+}
+@media screen and (max-width: 798px) {
+    .forecast{
+        flex-direction: column;
+        max-width: 93%;
+        padding: 35px 5px 15px 8px;
+    }
+    .forecast-row{
+        flex-direction: row;
+        justify-content: space-between;
+        gap: 15px;
+    }
+    .forecast-date{
+        width: 52px;
+    }
+    #forecast_date{
+        font-size: 13px;
+    }
+    .forecast-cell{
+        border-bottom: none;
+        min-width: 47px;
+    }
 }

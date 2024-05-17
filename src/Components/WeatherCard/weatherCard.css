@@ -66,10 +66,11 @@
 @media screen and (max-width:675px) {
     .weatherCard{
         padding: 27px 5px 5px 8px;
+        max-width: 350px;
     }
     .weather-details{
         font-size: 15px;
-        
+        min-width: 195px;
     }
     .weather-label{
         width: 115px;
