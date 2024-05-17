@@ -49,7 +49,7 @@ const WeatherCard = ({city, index, onDragStart, onClick}) => {
               <div className="weather-summary">
                   {getWeatherIcon(weatherData.current_weather.temperature)}
                   <div className="city-temparature">
-                  {convertTemperature(weatherData.current_weather.temperature, temp)} °{temp === "Celsius" ? "C" : "F"}
+                  {convertTemperature(weatherData.current_weather.temperature, temp).toFixed(2)} °{temp === "Celsius" ? "C" : "F"}
                   </div>
               </div>
               <div className="location-details">
