@@ -5,7 +5,7 @@ import { IoThunderstorm } from "react-icons/io5";
 import { RiDeleteBin2Line } from "react-icons/ri";
 import DataContext from "../DataContext";
 
-const WeatherCard = ({city, index}) => {
+const WeatherCard = ({city, index, onDragStart}) => {
   const {cities, setCities} = useContext(DataContext);
   const getWeatherIcon = (temperature) => {
       if (temperature >= 35) {
@@ -28,7 +28,7 @@ const WeatherCard = ({city, index}) => {
   const cityData = city.cityDetails;
   const weatherData=city.weatherDetails;
   return(
-      <div className="weatherCard">
+      <div className="weatherCard" draggable="true" onDragStart={(e) => onDragStart(e, index)}>
           <div className="weather-subsection">
               <div className="weather-summary">
                   {getWeatherIcon(weatherData.current_weather.temperature)}
