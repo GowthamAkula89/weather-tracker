@@ -1,0 +1,33 @@
+.toggle-container{
+    display: flex;
+    justify-content: end;
+    margin: 6px;
+}
+.toggle-switch {
+    width: 60px;
+    height: 25px;
+    background-color: #4caf50;
+    border-radius: 30px;
+    display: flex;
+    align-items: center;
+    padding: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  .toggle-label{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .toggle-switch .toggle-knob {
+    width: 25px;
+    height: 25px;
+    background-color: white;
+    border-radius: 50%;
+    transition: transform 0.3s;
+  }
+  
+  .toggle-switch .toggle-knob.active {
+    transform: translateX(35px);
+  }
+  

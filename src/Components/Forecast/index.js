@@ -1,8 +1,9 @@
-import React from "react";
+import React, {useContext} from "react";
 import "./forecast.css";
 import { RiDeleteBin2Line } from "react-icons/ri";
+import DataContext from "../DataContext";
 const Forecast = ({ city, handleOpenForecast }) => {
-    console.log(city);
+  const {temp} = useContext(DataContext);
   const forecastData = city.forecastDetails.daily;
   const forecastDataUnits = city.forecastDetails.daily_units;
 
@@ -21,6 +22,12 @@ const Forecast = ({ city, handleOpenForecast }) => {
       minute: '2-digit',
       hour12: true
     });
+  };
+  const convertTemperature = (temperature, type) => {
+    if (type === "Farenhiet") {
+      return (temperature * 9/5) + 32;
+    }
+    return temperature;
   };
   const handleDelete = () => {
     handleOpenForecast()
@@ -41,10 +48,10 @@ const Forecast = ({ city, handleOpenForecast }) => {
           <div className="forecast-cell">{formatTime(forecastData.sunrise[index])}</div>
           <div className="forecast-cell">{formatTime(forecastData.sunset[index])}</div>
           <div className="forecast-cell">
-            {forecastData.temperature_2m_max[index]} {forecastDataUnits.temperature_2m_max}
+            {convertTemperature(forecastData.temperature_2m_max[index], temp).toFixed(0)} °{temp === "Celsius" ? "C" : "F"}
           </div>
           <div className="forecast-cell">
-            {forecastData.temperature_2m_min[index]} {forecastDataUnits.temperature_2m_min}
+            {convertTemperature(forecastData.temperature_2m_min[index], temp).toFixed(0)} °{temp === "Celsius" ? "C" : "F"}
           </div>
           <div className="forecast-cell">
             {forecastData.rain_sum[index]} {forecastDataUnits.rain_sum}
