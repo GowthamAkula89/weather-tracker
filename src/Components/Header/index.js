@@ -5,7 +5,7 @@ import Menu from "../Menu";
 import DataContext from "../DataContext";
 
 const Header = () => {
-  const {selectedCity, setSelectedCity, setCities} = useContext(DataContext);
+  const {setSelectedCity, cities, setCities} = useContext(DataContext);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [filteredCities,setFilteredCities]=useState([]);
   const [debounceTimer,setDebounceTimer]=useState(null);
@@ -80,12 +80,32 @@ const Header = () => {
   }
 
   const handleAdd = async() => {
-    setSelectedCity((prevState)=>({...prevState,cityDetails:searchCity}));
-    const weatherData = await fetchData(searchCity,"weather");
-    setSelectedCity((prevState)=> ({...prevState,weatherDetails:weatherData}));
-    const forecastData = await fetchData(searchCity,"forecast");
-    setSelectedCity((prevState) => ({...prevState, forecastDetails:forecastData}));
-    setCities(selectedCity)
+    if (!searchCity) return;
+
+    const weatherData = await fetchData(searchCity, "weather");
+    const forecastData = await fetchData(searchCity, "forecast");
+
+    const newCityData = {
+      cityDetails: searchCity,
+      weatherDetails: weatherData,
+      forecastDetails: forecastData,
+    };
+
+    const updatedCities = [...cities, newCityData];
+    setCities(updatedCities);
+    localStorage.setItem("cities", JSON.stringify(updatedCities));
+    // setSelectedCity((prevState)=>({...prevState,cityDetails:searchCity}));
+    // const weatherData = await fetchData(searchCity,"weather");
+    // setSelectedCity((prevState)=> ({...prevState,weatherDetails:weatherData}));
+    // const forecastData = await fetchData(searchCity,"forecast");
+    // setSelectedCity((prevState) => ({...prevState, forecastDetails:forecastData}));
+    // localStorage.setItem("cities", JSON.stringify([...cities, selectedCity]));
+    // setCities((prevState) => ({...prevState, selectedCity}));
+    // setSelectedCity({
+    //   cityDetails:[],
+    //   weatherDetails:[],
+    //   forecastDetails:[]
+    // })
     setSearchCity([]);
     setSearchValue("");
   }

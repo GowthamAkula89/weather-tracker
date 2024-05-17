@@ -1,5 +1,13 @@
-.App {
+
+body, html {
   background-color: #d2d2f7;
-  height: 100vh;
+  height: 100%;
+  width: 100%;
 }
 
+#root {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  overflow: auto;
+}
