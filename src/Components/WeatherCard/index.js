@@ -3,6 +3,7 @@ import "./weatherCard.css";
 import { FaSun, FaCloudSun, FaCloudRain, FaSnowflake } from "react-icons/fa";
 import { IoThunderstorm } from "react-icons/io5";
 import { RiDeleteBin2Line } from "react-icons/ri";
+
 const WeatherCard = ({city}) => {
     const getWeatherIcon = (temperature) => {
         if (temperature >= 35) {
@@ -33,10 +34,20 @@ const WeatherCard = ({city}) => {
                 </div>
             </div>
             <div className="weather-details">
-                <div>Temparature: {weatherData.current_weather.temperature} °C </div>
-                <div>Wind Speed:{weatherData.current_weather.windspeed} km/hr</div>
-                <div>Wind Direction: {weatherData.current_weather.winddirection}  °</div>
-            </div>
+              <div className="weather-row">
+                  <div className="weather-label">Temperature</div>
+                  <div className="weather-value">: {weatherData.current_weather.temperature} °C</div>
+              </div>
+              <div className="weather-row">
+                  <div className="weather-label">Wind Speed</div>
+                  <div className="weather-value">: {weatherData.current_weather.windspeed} km/hr</div>
+              </div>
+              <div className="weather-row">
+                  <div className="weather-label">Wind Direction</div>
+                  <div className="weather-value">: {weatherData.current_weather.winddirection} °</div>
+              </div>
+          </div>
+
             <RiDeleteBin2Line className="delete-btn"/>
         </div>
     )

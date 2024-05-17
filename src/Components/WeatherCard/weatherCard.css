@@ -1,5 +1,5 @@
 .weatherCard{
-    max-width: 500px;
+    max-width: 600px;
     background-color: #beb8b8;
     padding: 15px 25px;
     display: flex;
@@ -7,6 +7,7 @@
     justify-content: space-between ;
     border-radius: 5px;
     position: relative;
+    gap: 5px;
 }
 .weather-subsection{
     display: flex;
@@ -23,6 +24,7 @@
     height: 35px;
     fill: #ffffff;
 }
+
 .city-temparature{
     font-size: 32px;
     font-weight: 500;
@@ -43,6 +45,13 @@
     display: flex;
     flex-direction: column;
     gap: 6px;
+    margin-top: auto;
+}
+.weather-row{
+    display: flex;
+}
+.weather-label{
+    width: 150px;
 }
 .delete-btn{
     position: absolute;
@@ -55,10 +64,14 @@
 }
 @media screen and (max-width:675px) {
     .weatherCard{
-        padding: 27px 8px 5px 8px
+        padding: 27px 5px 5px 8px;
     }
     .weather-details{
-        font-size: 18px;
+        font-size: 15px;
+        
+    }
+    .weather-label{
+        width: 115px;
     }
     .location-place{
         font-size: 18px;
