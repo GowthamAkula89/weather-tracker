@@ -13,6 +13,14 @@ function MenuItem ({ city,  onClick }){
     );
 };
 
+function MobileScreenMenuItem ({city, onClick}){
+    return (
+        <div className="menuItem" onClick={onClick}>
+            <div className="cityName">{city.name}</div>
+            <div>{city.country}, {city.country_code}</div>
+        </div>
+    );
+}
 
 const Menu = ({filteredCities,handleSearchCity}) => {
     return(
@@ -21,10 +29,19 @@ const Menu = ({filteredCities,handleSearchCity}) => {
                 <>
                     {filteredCities.map((city)=> 
                     <div key={city.id} >
-                        <MenuItem 
-                            city={city}
-                            onClick={() => handleSearchCity(city)}
-                        />
+                        <div className="desktop-menu">
+                            <MenuItem 
+                                city={city}
+                                onClick={() => handleSearchCity(city)}
+                            />
+                        </div>
+                        <div   className="mobile-menu">
+                            <MobileScreenMenuItem
+                                city={city}
+                                onClick={() => handleSearchCity(city)}
+                            />
+                        </div>
+                        
                     </div>)}
                 </>
             }

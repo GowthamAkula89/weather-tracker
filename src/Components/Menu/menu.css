@@ -33,3 +33,14 @@
     font-size: 18px;
     font-weight: 500;
 }
+.mobile-menu{
+    display: none;
+}
+@media screen and (max-width: 765px) {
+    .mobile-menu{
+        display: block;
+    }
+    .desktop-menu{
+        display: none;
+    }
+}

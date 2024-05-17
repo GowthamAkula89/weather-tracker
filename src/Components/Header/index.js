@@ -5,7 +5,7 @@ import Menu from "../Menu";
 import DataContext from "../DataContext";
 
 const Header = () => {
-  const {setSelectedCity, cities, setCities} = useContext(DataContext);
+  const { cities, setCities} = useContext(DataContext);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [filteredCities,setFilteredCities]=useState([]);
   const [debounceTimer,setDebounceTimer]=useState(null);
@@ -94,18 +94,6 @@ const Header = () => {
     const updatedCities = [...cities, newCityData];
     setCities(updatedCities);
     localStorage.setItem("cities", JSON.stringify(updatedCities));
-    // setSelectedCity((prevState)=>({...prevState,cityDetails:searchCity}));
-    // const weatherData = await fetchData(searchCity,"weather");
-    // setSelectedCity((prevState)=> ({...prevState,weatherDetails:weatherData}));
-    // const forecastData = await fetchData(searchCity,"forecast");
-    // setSelectedCity((prevState) => ({...prevState, forecastDetails:forecastData}));
-    // localStorage.setItem("cities", JSON.stringify([...cities, selectedCity]));
-    // setCities((prevState) => ({...prevState, selectedCity}));
-    // setSelectedCity({
-    //   cityDetails:[],
-    //   weatherDetails:[],
-    //   forecastDetails:[]
-    // })
     setSearchCity([]);
     setSearchValue("");
   }
