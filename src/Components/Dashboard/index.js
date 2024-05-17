@@ -2,8 +2,12 @@ import React, { useContext, useEffect, useState } from "react";
 import "./dashboard.css";
 import DataContext from "../DataContext";
 import WeatherCard from "../WeatherCard";
+import Forecast from "../Forecast";
+
 const Dashboard = () => {
-    const {selectedCity, cities, setCities} = useContext(DataContext);
+    const { cities, setCities} = useContext(DataContext);
+    const [openForecast, setOpenForecast] = useState(false);
+    const [cityIndex, setCityIndex] = useState(-1);
     const [draggedItemIndex, setDraggedItemIndex] = useState(null);
     useEffect(() => {
         try {
@@ -14,7 +18,6 @@ const Dashboard = () => {
             setCities([]);
         }
     },[])
-    console.log(selectedCity);
 
     const handleDragStart = (e, index) => {
         setDraggedItemIndex(index);
@@ -34,22 +37,33 @@ const Dashboard = () => {
     const handleDragOver = (e) => {
     e.preventDefault();
     };
+    const handleOnClick = (idx) => {
+        setCityIndex(idx);
+        setOpenForecast(true);
+    }
+    const handleOpenForecast = () => {
+        setOpenForecast(false)
+    }
     return(
         <div className="dashboard">
             {cities.length !== 0 ? (
-                cities.map((city, index) => 
-                <div
-                    key={index}
-                    onDrop={(e) => handleDrop(e, index)}
-                    onDragOver={handleDragOver}
-                >
+                cities.map((city, index) => (
+                <div key={index}>
+                    <div
+                        onDrop={(e) => handleDrop(e, index)}
+                        onDragOver={handleDragOver}
+                    >
                     <WeatherCard
                         city={city}
                         index={index}
                         onDragStart={handleDragStart}
+                        onClick={() => handleOnClick(index)}
+                        
                     />
+                    </div>
+                    {openForecast && cityIndex === index && <Forecast city={cities[cityIndex]} handleOpenForecast={handleOpenForecast}/>}
                 </div>
-                )
+                ))
             ) : (
                 <div>No cities available. Add a city to view the weather.</div>
             )}

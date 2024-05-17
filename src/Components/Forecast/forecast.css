@@ -1,0 +1,27 @@
+.forecast{
+    margin-top: 25px;
+    min-height: 200px;
+    max-width: 85%;
+    background-color: #005e81;
+    border-radius: 5px;
+    display: flex;
+    justify-content: space-around;
+    padding: 35px 15px 15px 15px;
+    position: relative;
+}
+.forecast-row{
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    color: #ffffff;
+    
+}
+.forecast-date{
+    font-size: 18px;
+    font-weight: 500;
+    margin-bottom: 25px;
+    
+}
+.forecast-cell{
+    border-bottom: 1px solid #ffffff;
+}
